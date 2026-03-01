@@ -36,16 +36,21 @@ export const loginUser = async (email: string, password: string) => {
     return response.json();
 };
 
-// LiveKit token (now requires auth)
-export const fetchLiveKitToken = async (roomName: string): Promise<string> => {
-    const response = await fetch(`${API_BASE_URL}/livekit/token?roomName=${roomName}`, {
+// LiveKit token (now requires auth, uses sessionId)
+export interface LiveKitTokenResponse {
+    token: string;
+    roomName: string;
+    isModerator: string; // "true" or "false"
+}
+
+export const fetchLiveKitToken = async (sessionId: string): Promise<LiveKitTokenResponse> => {
+    const response = await fetch(`${API_BASE_URL}/livekit/token?sessionId=${sessionId}`, {
         headers: authHeaders(),
     });
     if (!response.ok) {
-        throw new Error('Failed to fetch token');
+        throw new Error('Failed to fetch LiveKit token');
     }
-    const data = await response.json();
-    return data.token;
+    return response.json();
 };
 
 // Session APIs
