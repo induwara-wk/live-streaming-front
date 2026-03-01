@@ -1,0 +1,294 @@
+[Skip to main content](https://docs.livekit.io/transport/#main-content)
+[Docs](https://docs.livekit.io/)
+[GitHub](https://github.com/livekit/livekit)
+[Sign in with Cloud](https://cloud.livekit.io/login?r=/login_success?redirect_to=https://docs.livekit.io/transport/)
+[Introduction](https://docs.livekit.io/intro/)
+[Build Agents](https://docs.livekit.io/agents/)
+[Agent Frontends](https://docs.livekit.io/frontends/)
+[Telephony](https://docs.livekit.io/telephony/)
+[WebRTC Transport](https://docs.livekit.io/transport/)
+[Manage & Deploy](https://docs.livekit.io/deploy/)
+[Reference](https://docs.livekit.io/reference/)
+
+### Get Started
+[Introduction](https://docs.livekit.io/transport/)
+
+### Media
+[Overview](https://docs.livekit.io/transport/media/)
+[Camera & microphone](https://docs.livekit.io/transport/media/publish/)
+[Screen sharing](https://docs.livekit.io/transport/media/screenshare/)
+[Subscribing to tracks](https://docs.livekit.io/transport/media/subscribe/)
+[Processing raw tracks](https://docs.livekit.io/transport/media/raw-tracks/)
+[Noise & echo cancellation](https://docs.livekit.io/transport/media/noise-cancellation/)
+[Enhanced noise cancellation](https://docs.livekit.io/transport/media/enhanced-noise-cancellation/)
+[Codecs & more](https://docs.livekit.io/transport/media/advanced/)
+
+### Data
+[Overview](https://docs.livekit.io/transport/data/)
+[Sending text](https://docs.livekit.io/transport/data/text-streams/)
+[Sending files & bytes](https://docs.livekit.io/transport/data/byte-streams/)
+[Remote method calls](https://docs.livekit.io/transport/data/rpc/)
+[Data packets](https://docs.livekit.io/transport/data/packets/)
+
+### Encryption
+[Overview](https://docs.livekit.io/transport/encryption/)
+[Get started](https://docs.livekit.io/transport/encryption/start/)
+
+### Self-hosting
+[Overview](https://docs.livekit.io/transport/self-hosting/)
+[Running locally](https://docs.livekit.io/transport/self-hosting/local/)
+[Deployment](https://docs.livekit.io/transport/self-hosting/deployment/)
+[Virtual machines](https://docs.livekit.io/transport/self-hosting/vm/)
+[Kubernetes](https://docs.livekit.io/transport/self-hosting/kubernetes/)
+[Distributed multi-region](https://docs.livekit.io/transport/self-hosting/distributed/)
+[Firewall configuration](https://docs.livekit.io/transport/self-hosting/ports-firewall/)
+[Benchmarks](https://docs.livekit.io/transport/self-hosting/benchmark/)
+[Egress](https://docs.livekit.io/transport/self-hosting/egress/)
+[Ingress](https://docs.livekit.io/transport/self-hosting/ingress/)
+[SIP server](https://docs.livekit.io/transport/self-hosting/sip-server/)
+
+### Reference
+[LiveKit SDKs](https://docs.livekit.io/reference/#livekit-sdks)
+[Egress API](https://docs.livekit.io/reference/other/egress/api/)
+[Ingress API](https://docs.livekit.io/reference/other/ingress/api/)
+[Server APIs](https://docs.livekit.io/reference/#server-apis)
+
+# Introduction
+
+Build realtime applications with LiveKit's WebRTC transport layer, SDKs, and media handling capabilities.
+On this page
+[Overview](https://docs.livekit.io/transport/#overview)
+[Key concepts](https://docs.livekit.io/transport/#key-concepts)
+[SDK platforms](https://docs.livekit.io/transport/#sdk-platforms)
+[Media](https://docs.livekit.io/transport/#media)
+[Data](https://docs.livekit.io/transport/#data)
+[Encryption](https://docs.livekit.io/transport/#encryption)
+[Self-hosting](https://docs.livekit.io/transport/#self-hosting)
+[Getting started](https://docs.livekit.io/transport/#getting-started)
+
+## https://docs.livekit.io/transport/#overviewOverview
+LiveKit transport provides the foundation for building realtime applications using WebRTC. It includes client and server SDKs for multiple platforms, comprehensive media and data handling, stream export and import services, and hardware integration capabilities. Together, these components enable you to build production-ready realtime applications that work across web, mobile, hardware, and embedded devices.
+LiveKit's transport layer handles the complexity of WebRTC connections, media encoding and decoding, network adaptation, and state synchronization. The SDKs provide a unified API across all platforms, ensuring consistent behavior whether you're building for web browsers, mobile apps, or embedded devices.
+
+## https://docs.livekit.io/transport/#key-conceptsKey concepts
+Understand these core concepts to build effective realtime applications with LiveKit.
+
+### https://docs.livekit.io/transport/#sdk-platformsSDK platforms
+
+LiveKit provides a comprehensive ecosystem of SDKs for building realtime applications, including [realtime SDKs](https://docs.livekit.io/transport/#realtime-sdks) for building user-facing applications, and [server-side SDKs](https://docs.livekit.io/transport/#server-side-sdks) for backend operations and media processing. The SDKs are designed to work together, and support multiple platforms and languages.
+All SDKs provide consistent APIs and features across platforms, ensuring that your applications work reliably regardless of the target platform. These core capabilities are designed to handle the complexities of realtime communication while providing a simple, unified API.
+These capabilities include:
+- Unified room model: Same room concepts across all platforms.
+- Consistent track handling: Standardized audio and video track management.
+- Shared data APIs: Common data channel and messaging patterns.
+- Quality adaptation: Automatic quality adjustment based on network conditions.
+[SDK platform quickstartsGet started with LiveKit SDKs for React, Swift, Android, Flutter, React Native, Expo, Unity, and more.](https://docs.livekit.io/transport/sdk-platforms/)
+
+## SDK platform quickstarts
+Get started with LiveKit SDKs for React, Swift, Android, Flutter, React Native, Expo, Unity, and more.
+
+#### https://docs.livekit.io/transport/#realtime-sdksRealtime SDKs
+Realtime SDKs let you build applications that connect to LiveKit rooms and participate in realtime communication. These SDKs handle WebRTC connections, media capture, and room management.
+- Media capture: Camera, microphone, and screen sharing.
+- Room management: Join, leave, and manage room participants.
+- Track handling: Subscribe to and publish audio and video tracks.
+- Data channels: Realtime messaging between participants.
+- Connection management: Automatic reconnection and quality adaptation.
+[JavaScriptJavaScript SDKJavaScript/TypeScript SDK for web browsers. Supports all major browsers and provides React hooks for easy integration.](https://github.com/livekit/client-sdk-js)
+
+## JavaScript SDK
+JavaScript/TypeScript SDK for web browsers. Supports all major browsers and provides React hooks for easy integration.
+[AppleiOS/macOS/visionOSNative Swift SDK for Apple platforms including iOS, macOS, and visionOS. Optimized for Apple's ecosystem.](https://github.com/livekit/client-sdk-swift)
+
+## iOS/macOS/visionOS
+Native Swift SDK for Apple platforms including iOS, macOS, and visionOS. Optimized for Apple's ecosystem.
+[AndroidAndroidNative Kotlin SDK for Android applications. Provides comprehensive media handling and room management.](https://github.com/livekit/client-sdk-android)
+
+## Android
+Native Kotlin SDK for Android applications. Provides comprehensive media handling and room management.
+[FlutterFlutterCross-platform SDK for Flutter applications. Write once, run on iOS, Android, web, and desktop.](https://github.com/livekit/client-sdk-flutter)
+
+## Flutter
+Cross-platform SDK for Flutter applications. Write once, run on iOS, Android, web, and desktop.
+[ReactReact NativeReact Native SDK for building cross-platform mobile applications with JavaScript/TypeScript.](https://github.com/livekit/client-sdk-react-native)
+
+## React Native
+React Native SDK for building cross-platform mobile applications with JavaScript/TypeScript.
+[UnityUnityUnity SDK for game development and virtual reality applications. Supports both native and WebGL builds.](https://github.com/livekit/client-sdk-unity)
+
+## Unity
+Unity SDK for game development and virtual reality applications. Supports both native and WebGL builds.
+[C++C++SDK for building native C++ applications.](https://github.com/livekit/client-sdk-cpp)
+
+## C++
+SDK for building native C++ applications.
+LiveKit also supports specialized platforms and use cases beyond the main web and mobile platforms:
+- [Rust SDK](https://github.com/livekit/rust-sdks): For systems programming and embedded applications.
+- [Unity WebGL](https://github.com/livekit/client-sdk-unity-web): For web-based Unity applications.
+- [ESP32](https://github.com/livekit/client-sdk-esp32): For IoT and embedded devices.
+[Rust SDK](https://github.com/livekit/rust-sdks)
+[Unity WebGL](https://github.com/livekit/client-sdk-unity-web)
+[ESP32](https://github.com/livekit/client-sdk-esp32)
+
+#### https://docs.livekit.io/transport/#server-side-sdksServer-side SDKs
+Server-side SDKs provide the infrastructure and control needed to manage LiveKit rooms and participants. These capabilities enable backend applications to orchestrate realtime sessions and process media streams.
+- Room control: Create, manage, and monitor rooms.
+- Participant management: Control participant permissions and behavior.
+- Media processing: Subscribe to and process media streams.
+- Webhook handling: Respond to room and participant events.
+- Recording: Capture and store room sessions.
+The Go SDK additionally offers client capabilities, allowing you to build automations that act like end users.
+[Node.jsNode.jsJavaScript SDK for Node.js applications. Includes room management, participant control, and webhook handling.](https://github.com/livekit/node-sdks)
+
+## Node.js
+JavaScript SDK for Node.js applications. Includes room management, participant control, and webhook handling.
+[PythonPythonPython SDK for backend applications. Provides comprehensive media processing and room management capabilities.](https://github.com/livekit/python-sdks)
+
+## Python
+Python SDK for backend applications. Provides comprehensive media processing and room management capabilities.
+[GoGolangGo SDK for high-performance server applications. Optimized for scalability and low latency. Includes client capabilities.](https://github.com/livekit/server-sdk-go)
+
+## Golang
+Go SDK for high-performance server applications. Optimized for scalability and low latency. Includes client capabilities.
+[RubyRubyRuby SDK for Ruby on Rails and other Ruby applications. Full-featured server integration.](https://github.com/livekit/server-sdk-ruby)
+
+## Ruby
+Ruby SDK for Ruby on Rails and other Ruby applications. Full-featured server integration.
+[KotlinJava/KotlinJava and Kotlin SDK for JVM-based applications. Enterprise-ready with comprehensive features.](https://github.com/livekit/server-sdk-kotlin)
+
+## Java/Kotlin
+Java and Kotlin SDK for JVM-based applications. Enterprise-ready with comprehensive features.
+[RustRustRust SDK for systems programming and high-performance applications. Memory-safe and fast.](https://github.com/livekit/rust-sdks)
+
+## Rust
+Rust SDK for systems programming and high-performance applications. Memory-safe and fast.
+There are also community-maintained SDKs for other languages:
+- [PHP](https://github.com/agence104/livekit-server-sdk-php): Community-maintained SDK for PHP applications.
+- [.NET](https://github.com/pabloFuente/livekit-server-sdk-dotnet): Community-maintained SDK for .NET applications.
+[PHP](https://github.com/agence104/livekit-server-sdk-php)
+[.NET](https://github.com/pabloFuente/livekit-server-sdk-dotnet)
+
+### https://docs.livekit.io/transport/#mediaMedia
+
+LiveKit enables realtime exchange of audio and video streams between participants. You can publish and subscribe to tracks, process raw media, apply noise cancellation, and export or import streams.
+[Media overviewLearn how to handle realtime media tracks, screen sharing, and stream export/import in your applications.](https://docs.livekit.io/transport/media/)
+
+## Media overview
+
+Learn how to handle realtime media tracks, screen sharing, and stream export/import in your applications.
+
+### https://docs.livekit.io/transport/#dataData
+
+LiveKit provides realtime data exchange between participants using text streams, byte streams, remote procedure calls, and data packets. You can also synchronize state across all participants in a room.
+[Data overviewLearn how to send text, files, and custom data, and synchronize state between participants.](https://docs.livekit.io/transport/data/)
+
+## Data overview
+
+Learn how to send text, files, and custom data, and synchronize state between participants.
+
+### https://docs.livekit.io/transport/#encryptionEncryption
+
+Secure your realtime media and data with end-to-end encryption. LiveKit provides built-in E2EE support for both media tracks and data channels.
+[Encryption overviewLearn how to enable end-to-end encryption for media and data in your applications.](https://docs.livekit.io/transport/encryption/)
+
+## Encryption overview
+
+Learn how to enable end-to-end encryption for media and data in your applications.
+
+### https://docs.livekit.io/transport/#self-hostingSelf-hosting
+
+Self-host LiveKit servers for full control over your WebRTC infrastructure, data, and configuration. Deploy LiveKit servers on local development environments, virtual machines, Kubernetes clusters, or distributed multi-region setups.
+[Self-hosting overviewLearn how to self-host LiveKit servers for full control over your infrastructure.](https://docs.livekit.io/transport/self-hosting/)
+
+## Self-hosting overview
+Learn how to self-host LiveKit servers for full control over your infrastructure.
+
+## https://docs.livekit.io/transport/#getting-startedGetting started
+Choose your platform to get started building your application:
+[SDK platform quickstartsGet started with LiveKit SDKs for your target platform with step-by-step guides.](https://docs.livekit.io/transport/sdk-platforms/)
+
+## SDK platform quickstarts
+Get started with LiveKit SDKs for your target platform with step-by-step guides.
+On this page
+[Overview](https://docs.livekit.io/transport/#overview)
+[Key concepts](https://docs.livekit.io/transport/#key-concepts)
+[SDK platforms](https://docs.livekit.io/transport/#sdk-platforms)
+[Media](https://docs.livekit.io/transport/#media)
+[Data](https://docs.livekit.io/transport/#data)
+[Encryption](https://docs.livekit.io/transport/#encryption)
+[Self-hosting](https://docs.livekit.io/transport/#self-hosting)
+[Getting started](https://docs.livekit.io/transport/#getting-started)
+Up Next
+[SDK platform quickstarts: Overview](https://docs.livekit.io/transport/sdk-platforms/)
+SDK platform quickstarts: Overview
+The open source framework and cloud platform for voice, video, and physical AI agents.
+
+## Keep in touch
+[X](https://x.com/livekit)
+[Slack](https://livekit.io/join-slack)
+[YouTube](https://www.youtube.com/@livekit_io)
+Developers
+[Documentation](https://docs.livekit.io/)
+[Community](https://community.livekit.io)
+[Security](https://livekit.io/security)
+[Docs MCP Server](https://docs.livekit.io/mcp/)
+Resources
+[Brand assets](https://livekit.io/brand)
+[Video codecs](https://livekit.io/webrtc/codecs-guide)
+[Codec bitrates](https://livekit.io/webrtc/bitrate-guide)
+[WebRTC browser test](https://livekit.io/webrtc/browser-test)
+[Connection test](https://livekit.io/connection-test)
+Company
+[Blog](https://blog.livekit.io/)
+[Careers](https://livekit.io/careers)
+[About](https://livekit.io/about)
+[Open source](https://github.com/livekit/livekit/blob/master/LICENSE)
+© 2026 LiveKit. Engineered and designed worldwide. All rights reserved.
+[Terms of Service](https://livekit.io/legal/terms-of-service)
+[Cookie Policy](https://livekit.io/legal/cookie-policy)
+[Privacy Policy](https://livekit.io/legal/privacy-policy)
+[GitHub](https://github.com/livekit/livekit)
+[Sign in](https://cloud.livekit.io/login?r=/login_success?redirect_to=https://docs.livekit.io/transport/)
+
+### Get Started
+[Introduction](https://docs.livekit.io/transport/)
+
+### Media
+[Overview](https://docs.livekit.io/transport/media/)
+[Camera & microphone](https://docs.livekit.io/transport/media/publish/)
+[Screen sharing](https://docs.livekit.io/transport/media/screenshare/)
+[Subscribing to tracks](https://docs.livekit.io/transport/media/subscribe/)
+[Processing raw tracks](https://docs.livekit.io/transport/media/raw-tracks/)
+[Noise & echo cancellation](https://docs.livekit.io/transport/media/noise-cancellation/)
+[Enhanced noise cancellation](https://docs.livekit.io/transport/media/enhanced-noise-cancellation/)
+[Codecs & more](https://docs.livekit.io/transport/media/advanced/)
+
+### Data
+[Overview](https://docs.livekit.io/transport/data/)
+[Sending text](https://docs.livekit.io/transport/data/text-streams/)
+[Sending files & bytes](https://docs.livekit.io/transport/data/byte-streams/)
+[Remote method calls](https://docs.livekit.io/transport/data/rpc/)
+[Data packets](https://docs.livekit.io/transport/data/packets/)
+
+### Encryption
+[Overview](https://docs.livekit.io/transport/encryption/)
+[Get started](https://docs.livekit.io/transport/encryption/start/)
+
+### Self-hosting
+[Overview](https://docs.livekit.io/transport/self-hosting/)
+[Running locally](https://docs.livekit.io/transport/self-hosting/local/)
+[Deployment](https://docs.livekit.io/transport/self-hosting/deployment/)
+[Virtual machines](https://docs.livekit.io/transport/self-hosting/vm/)
+[Kubernetes](https://docs.livekit.io/transport/self-hosting/kubernetes/)
+[Distributed multi-region](https://docs.livekit.io/transport/self-hosting/distributed/)
+[Firewall configuration](https://docs.livekit.io/transport/self-hosting/ports-firewall/)
+[Benchmarks](https://docs.livekit.io/transport/self-hosting/benchmark/)
+[Egress](https://docs.livekit.io/transport/self-hosting/egress/)
+[Ingress](https://docs.livekit.io/transport/self-hosting/ingress/)
+[SIP server](https://docs.livekit.io/transport/self-hosting/sip-server/)
+
+### Reference
+[LiveKit SDKs](https://docs.livekit.io/reference/#livekit-sdks)
+[Egress API](https://docs.livekit.io/reference/other/egress/api/)
+[Ingress API](https://docs.livekit.io/reference/other/ingress/api/)
+[Server APIs](https://docs.livekit.io/reference/#server-apis)

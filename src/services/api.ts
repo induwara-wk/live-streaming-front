@@ -47,3 +47,71 @@ export const fetchLiveKitToken = async (roomName: string): Promise<string> => {
     const data = await response.json();
     return data.token;
 };
+
+// Session APIs
+export interface SessionData {
+    sessionId: string;
+    title: string;
+    description: string;
+    scheduledStartTime: string | null;
+    actualStartTime: string | null;
+    actualEndTime: string | null;
+    status: 'Scheduled' | 'Live' | 'Completed';
+    creatorId: string;
+    creatorName: string;
+    createdAt: string;
+}
+
+export const getSessions = async (): Promise<SessionData[]> => {
+    const response = await fetch(`${API_BASE_URL}/sessions`, {
+        headers: authHeaders(),
+    });
+    if (!response.ok) throw new Error('Failed to fetch sessions');
+    return response.json();
+};
+
+export const createSession = async (title: string, description: string, scheduledStartTime?: string) => {
+    const response = await fetch(`${API_BASE_URL}/sessions`, {
+        method: 'POST',
+        headers: authHeaders(),
+        body: JSON.stringify({ title, description, scheduledStartTime: scheduledStartTime || null }),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to create session');
+    }
+    return response.json();
+};
+
+export const updateSession = async (sessionId: string, title: string, description: string, scheduledStartTime?: string) => {
+    const response = await fetch(`${API_BASE_URL}/sessions/${sessionId}`, {
+        method: 'PUT',
+        headers: authHeaders(),
+        body: JSON.stringify({ title, description, scheduledStartTime: scheduledStartTime || null }),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to update session');
+    }
+    return response.json();
+};
+
+export const deleteSession = async (sessionId: string) => {
+    const response = await fetch(`${API_BASE_URL}/sessions/${sessionId}`, {
+        method: 'DELETE',
+        headers: authHeaders(),
+    });
+    if (!response.ok) throw new Error('Failed to delete session');
+};
+
+export const endSession = async (sessionId: string) => {
+    const response = await fetch(`${API_BASE_URL}/sessions/${sessionId}/end`, {
+        method: 'POST',
+        headers: authHeaders(),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to end session');
+    }
+    return response.json();
+};
