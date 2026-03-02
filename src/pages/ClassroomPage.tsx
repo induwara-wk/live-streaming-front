@@ -20,7 +20,8 @@ export default function ClassroomPage() {
     const [loading, setLoading] = useState(true);
 
     // IMPORTANT: Replace with your actual LiveKit server URL
-    const serverUrl = "ws://100.124.9.102:7880";
+    // const serverUrl = "ws://100.124.9.102:7880";
+    const serverUrl = "ws://192.168.1.200:7880"
 
     useEffect(() => {
         if (!sessionId) return;
