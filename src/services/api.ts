@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:8080/api';
+// const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'https://devoted-purpose-production.up.railway.app/api';
 
 // Helper to get auth headers
 function authHeaders(): HeadersInit {
